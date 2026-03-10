@@ -1,0 +1,210 @@
+/* Стили для SolveAI Mini App */
+
+:root {
+  --tg-theme-bg-color: #ffffff;
+  --tg-theme-text-color: #000000;
+  --tg-theme-hint-color: #999999;
+  --tg-theme-link-color: #2481cc;
+  --tg-theme-button-color: #2481cc;
+  --tg-theme-button-text-color: #ffffff;
+  --tg-theme-secondary-bg-color: #f0f0f0;
+}
+
+body {
+  background-color: var(--tg-theme-secondary-bg-color);
+  color: var(--tg-theme-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Карточки */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+  background-color: var(--tg-theme-bg-color);
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--tg-theme-text-color);
+}
+
+/* Аватар */
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+/* Прогресс бар */
+.progress {
+  background-color: var(--tg-theme-secondary-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+/* Бейджи */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Челленджи */
+.challenge-item {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--tg-theme-secondary-bg-color);
+  margin-bottom: 8px;
+}
+
+.challenge-item.completed {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.challenge-progress {
+  height: 6px;
+  background-color: var(--tg-theme-secondary-bg-color);
+  border-radius: 3px;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.challenge-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+  transition: width 0.3s ease;
+}
+
+/* Достижения */
+.achievement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--tg-theme-secondary-bg-color);
+  text-align: center;
+}
+
+.achievement-item.unlocked {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.achievement-icon {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.achievement-name {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Избранное */
+.favorite-item {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--tg-theme-secondary-bg-color);
+  margin-bottom: 8px;
+  border-left: 3px solid var(--tg-theme-button-color);
+}
+
+.favorite-question {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.favorite-answer {
+  font-size: 13px;
+  color: var(--tg-theme-hint-color);
+}
+
+/* Кнопки */
+.btn {
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Canvas для графиков */
+canvas {
+  max-width: 100%;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Тёмная тема */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tg-theme-bg-color: #1c1c1e;
+    --tg-theme-text-color: #ffffff;
+    --tg-theme-secondary-bg-color: #2c2c2e;
+  }
+  
+  .challenge-item.completed {
+    background-color: #1e4620;
+    border-color: #2d6a2f;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 380px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .h4 {
+    font-size: 1.2rem;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
